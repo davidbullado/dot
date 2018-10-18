@@ -1,0 +1,6 @@
+{
+    "breadcrumbs.enabled": true,
+    "editor.renderControlCharacters": true,
+    "editor.renderWhitespace": "all",
+    "liveServer.settings.donotShowInfoMsg": true
+}
