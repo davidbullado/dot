@@ -1,13 +1,15 @@
 #!/bin/bash
 res=$(cat ~/.bashrc | grep "alias config")
-
+function config {
+   /usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME $@
+}
 if [ -z "$res" ]
 then
     echo "dotfile setup..."
 
     echo ".cfg" >> .gitignore
     echo "alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'" >> $HOME/.bashrc
-    alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+    #alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
     
     git clone --bare git@github.com:davidbullado/dot.git $HOME/.cfg
     
