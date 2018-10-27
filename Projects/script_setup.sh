@@ -26,6 +26,7 @@ rm microsoft.gpg
 ############################# ProtonVPN #############################
 ########  https://protonvpn.com/support/linux-vpn-tool/ #############
 # init
+sudo apt-get -y install openvpn
 sudo apt-get -y install dialog
 sudo apt-get -y install python
 sudo apt-get -y install wget
@@ -34,7 +35,7 @@ sudo wget -O protonvpn-cli.sh https://raw.githubusercontent.com/ProtonVPN/proton
 sudo chmod +x protonvpn-cli.sh
 sudo ./protonvpn-cli.sh --install
 # config
-protonvpn-cli --init
+sudo protonvpn-cli --init
 # clean
 sudo rm ./protonvpn-cli.sh
 ############################# ProtonVPN #############################
