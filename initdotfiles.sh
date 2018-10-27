@@ -3,10 +3,6 @@ res=$(cat ~/.bashrc | grep "alias config")
 function config {
    /usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME $@
 }
-function dotbackup {
-   mkdir -p $(dirname .config-backup/$@)
-   mv $@ .config-backup/$@
-}
 if [ -z "$res" ]
 then
     echo "dotfile setup..."
@@ -24,7 +20,7 @@ then
         echo "Backing up pre-existing dot files.";
         mkdir -p .config-backup
         config checkout 2>&1 | egrep "\s+\." | awk {'print $1'} \
-        | xargs -I{} dotbackup {}
+        | xargs -I% sh -c 'mkdir -p $(dirname .config-backup/%); mv $@ .config-backup/$@'
         config checkout
     fi;
     config config --local status.showUntrackedFiles no
