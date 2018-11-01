@@ -1,5 +1,29 @@
 #!/bin/bash
 
+sudo apt update
+sudo apt -y install vim
+
+######################### Node  NPM Yarn #########################
+# init
+sudo apt install nodejs
+# setup
+[ ! -d ~/.npm-global ] && mkdir ~/.npm-global
+npm config set prefix '~/.npm-global'
+updpath='export PATH=~/.npm-global/bin:$PATH'
+respath=$(cat ~/.profile | grep "$updpath")
+[ -z "$respath" ] && echo "$updpath" >> ~/.profile
+source ~/.profile
+sudo npm install npm --global
+sudo chown -R david /home/david/.npm-global
+npm install yarn --global
+
+############################## Yarn ##############################
+curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+if [ ! -f /etc/apt/sources.list.d/yarn.list ]; then
+    echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+fi
+sudo apt-get update && sudo apt-get install -y yarn
+
 ############################# VSCode #############################
 # init
 sudo apt-get -y install curl
