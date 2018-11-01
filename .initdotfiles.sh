@@ -14,7 +14,7 @@ then
     echo "alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'" >> $HOME/.bashrc
     alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
     
-    git clone --bare git@github.com:davidbullado/dot.git $HOME/.cfg
+    git clone --bare https://github.com/davidbullado/dot.git $HOME/.cfg
     
     config checkout
     if [ $? = 0 ]; then
