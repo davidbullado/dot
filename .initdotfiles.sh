@@ -1,4 +1,7 @@
 #!/bin/bash
+
+sudo apt install -y git
+
 res=$(cat ~/.bashrc | grep "alias config")
 function config {
    /usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME $@
