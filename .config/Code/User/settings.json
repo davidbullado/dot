@@ -3,7 +3,20 @@
     "editor.renderControlCharacters": true,
     "editor.renderWhitespace": "all",
     "liveServer.settings.donotShowInfoMsg": true,
-    "workbench.colorTheme": "Visual Studio Dark",
+    "workbench.colorTheme": "Visual Studio Light",
     "window.restoreWindows": "all",
-    "window.titleBarStyle": "custom"
+    "window.titleBarStyle": "custom",
+    "explorer.confirmDragAndDrop": false,
+    "workbench.iconTheme": "material-icon-theme",
+    "python.jediEnabled": false,
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "explorer.confirmDelete": false,
+    "files.exclude": {
+        "**/.classpath": true,
+        "**/.project": true,
+        "**/.settings": true,
+        "**/.factorypath": true
+    },
+    "terminal.integrated.fontFamily": "Hack"
 }

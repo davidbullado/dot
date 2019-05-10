@@ -3,5 +3,9 @@
     {
         "key": "ctrl+q",
         "command": "-workbench.action.quit"
+    },
+    {
+        "key": "alt+left",
+        "command": "workbench.action.navigateBack"
     }
 ]
