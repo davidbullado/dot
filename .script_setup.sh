@@ -24,6 +24,13 @@ if [ ! -f /etc/apt/sources.list.d/yarn.list ]; then
 fi
 sudo apt-get update && sudo apt-get install -y yarn
 
+############################# dbeaver #############################
+wget -O - https://dbeaver.io/debs/dbeaver.gpg.key | sudo apt-key add -
+if [ ! -f /etc/apt/sources.list.d/dbeaver.list ]; then
+    echo "deb https://dbeaver.io/debs/dbeaver-ce /" | sudo tee /etc/apt/sources.list.d/dbeaver.list
+fi
+sudo apt-get update && sudo apt-get install -y dbeaver-ce
+
 ############################# VSCode #############################
 # init
 sudo apt-get -y install curl
